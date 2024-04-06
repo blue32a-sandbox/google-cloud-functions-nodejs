@@ -1,0 +1,13 @@
+services:
+  node:
+    image: node:20
+    volumes:
+      - .:/home/app:cached
+      - node_modules:/home/app/node_modules
+    working_dir: /home/app
+    tty: true
+    ports:
+      - "8080:8080"
+
+volumes:
+  node_modules:
